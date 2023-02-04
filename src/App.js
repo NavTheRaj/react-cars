@@ -1,24 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './containers/Header/Header';
+import CurrencyContext from './context/CurrencyContext';
+import { useReducer, useState } from 'react';
+import Dashboard from './containers/Dashboard/Dashboard';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+const App = () => {
+
+  // const reducer = (state, action) => {
+  //   if (state.currency === "USD") {
+  //     return {
+  //       currency: "EURO"
+  //     }
+  //   } else {
+  //     return {
+  //       currency: "USD"
+  //     }
+  //   }
+  // }
+
+  const [currency, setCurrency] = useState("USD")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CurrencyContext.Provider value={{ currency, setCurrency }}>
+      <div className="App">
+        <BrowserRouter>
+          <h1> WAA 2nd Exam </h1>
+          <Dashboard />
+        </BrowserRouter>
+
+      </div>
+    </CurrencyContext.Provider>
   );
 }
 

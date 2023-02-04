@@ -7,6 +7,44 @@
   pointer-events: none;
 }
 
+.global-body-container {
+  width: 50%;
+  margin: 20px auto;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  background-color: rgba(128, 128, 128, 0.182);
+  text-align: center;
+}
+
+
+.currency-label {
+  background-color: #6f950d;
+  border-radius: 1rem;
+  padding: 5px;
+  color: white;
+  font-size: small;
+  margin-left: 15px;
+}
+
+button {
+  margin: 5px 0;
+  padding: 5px;
+  font: inherit;
+  border: 1px solid #fa923f;
+  background-color: transparent;
+  color: #fa923f;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+button:hover,
+button:active {
+  color: white;
+  background-color: #fa923f;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,7 +70,78 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.NewProduct {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  text-align: center;
+}
+
+.NewProduct label {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.NewProduct input,
+.NewProduct textarea,
+.NewProduct select {
+  display: block;
+  width: 80%;
+  box-sizing: border-box;
+  border: 1px solid black;
+  outline: none;
+  font: inherit;
+  margin: auto;
+}
+
+.NewProduct button {
+  margin: 5px 0;
+  padding: 10px;
+  font: inherit;
+  border: 1px solid #fa923f;
+  background-color: transparent;
+  color: #fa923f;
+  cursor: pointer;
+}
+
+.NewProduct button:hover,
+.NewProduct button:active {
+  color: white;
+  background-color: #fa923f;
+}
+
+.delete-button:hover,
+.delete-button:active {
+  background-color: #cb1515;
+}
+
+.label-price,
+.input-price {
+  position: relative;
+  display: block;
+  padding-right: 76px;
+  width: 174px;
+  box-sizing: border-box;
+}
+
+.label-price::after {
+  content: '' attr(data-domain);
+  position: absolute;
+  top: 4px;
+  left: 96px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
 }
